@@ -6,7 +6,11 @@
     <title>lição de notas</title>
     <script>
         var nota = parseInt(prompt("digite nota: "));
-        if (nota >= 7){
+        if(isNaN(nota)){
+            alert("Valor inválido! Por favor, insira um número.");
+        }else if (nota > 10){
+            alert("nota invalida ❌");
+        }else if (nota >= 7){
             alert("Aprovado ✅"); 
         }else if(nota >= 5 && nota <6.9){
             alert("Recuperação ⚠️")
