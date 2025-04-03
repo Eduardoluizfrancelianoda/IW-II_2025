@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function exibirMenu(){
+        return prompt(
+            "===== MENU =====\n" +
+                "1 - Ver mensagem\n" +
+                "2 - Calcular média de notas\n" +
+                "3 - Sair\n" +
+                "Escolha uma opção:"
+        );
+        }
+
+        function executarOpcao(opcao){
+            switch(opcao){
+                case "1":
+                    alert("Olá! Bem-vindo ao menu");
+                    break;
+                case "2":
+                    let num1 = parseFloat(prompt("Digite o primeiro número:"));
+                    let num2 = parseFloat(prompt("Digite o segundo número:"));
+                    let num3 = parseFloat(prompt("Digite o terceiro número:"));
+                    if (isNaN(num1) || isNaN(num2) || isNaN(num3)) {
+                        alert("Erro: Você deve digitar números válidos.");
+                    } else {
+                        media=(num1 + num2 + num3)/3
+                        alert(`A média é: ` + media);
+                        if (media >= 7){
+                            alert("Aprovado ✅"); 
+                        }else if(media >= 5 && media <6.9){
+                            alert("Recuperação ⚠️")
+                        }else if(media < 5){
+                            alert("Reprovado ❌")
+        }
+                    }
+                    break;
+                case "3":
+                    alert("Saindo... tchau");
+                    return false; 
+                default:
+                    alert("Opção inválida. Tente novamente.");
+            }
+            return true; 
+        }
+
+        function iniciarMenu() {
+            let continuar = true;
+            while (continuar) {
+                let opcao = exibirMenu();
+                continuar = executarOpcao(opcao);
+            }
+        }
+
+        iniciarMenu();
+            
+
+        
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
