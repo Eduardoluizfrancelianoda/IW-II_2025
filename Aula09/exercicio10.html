@@ -12,16 +12,16 @@
     <button id="proximo">Próximo</button>
 </body>
 <script>
-    const imagens = ["WhatsApp Image 2025-05-06 at 9.46.09 PM.jpeg", "WhatsApp Image 2025-05-07 at 4.34.34 PM.jpeg,", "jcole.jpg"];
+    const imagens = ["WhatsApp Image 2025-05-06 at 9.46.09 PM.jpeg", "Gato.jpeg", "jcole.jpg"];
     let atual = 0;
-    const carrossel = document.getElementById("carrosel");
+    const carrosel = document.getElementById("carrosel");
 
     document.getElementById("proximo").addEventListener("click", () => {
         atual = (atual + 1) % imagens.length;
-        carrossel.src = imagens[atual];
+        carrosel.src = imagens[atual];
     });
 
-    document.getElementById("amterior").addEventListener("click", () => {
+    document.getElementById("anterior").addEventListener("click", () => {
         atual = (atual - 1 + imagens.length) % imagens.length;
         carrosel.src = imagens[atual];
     });
